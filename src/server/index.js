@@ -26,7 +26,7 @@ const queryHolder = '&of=json&txt='
 const langHolder= '&lang=en';
 
 app.post('/meaning', function(req, res){
-	const request = await fetch (baseUrl + apiHolder + process.env.API_KEY + queryHolder + req.body.input + langHolder + projectData.lang)
+	const request = await fetch (baseUrl + apiHolder + process.env.API_KEY + queryHolder + req.body.input + langHolder + req.body.lang)
 	try {
 			const receivedData = await request.json();
 			console.log(receivedData);

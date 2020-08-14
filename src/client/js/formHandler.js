@@ -9,9 +9,11 @@ function handleSubmit(event) {
 
     // get input from form field
     let formText = document.getElementById('name').value
+	let langSelect = document.getElementById('lang-select').value
 	//send input to server for handling and retrieve result
 	postText('/meaning', {
-		input: formText
+		input: formText,
+		lang: langSelect
 	})
 	.then(function (res) {
 		document.getElementById('score-result').textContent = res.score_tag;
@@ -20,7 +22,8 @@ function handleSubmit(event) {
 		document.getElementById('confidence-result').textContent = res.confidence;
 		document.getElementById('irony-result').textContent = res.irony;
 		
-		document.getElementById(results).style.display = inherit;
+		document.getElementById('results').style.display = inherit;
+		document.getElementById('results-mes').style.display = none;
 	})
 }
 

@@ -27,40 +27,87 @@
             <section>
                 <form class="" onsubmit="return Client.handleSubmit(event)">
 					<textarea id="name" type="text" name="input" value="" placeholder="Enter Your Text Here"></textarea> <!--Give them a little more room to write/paste their text into -->
-                    <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return handleSubmit(event)">
+					<p>
+						<label for="lang">Choose Language: </label>
+						<select name="lang" id="lang-select">
+							<option value="auto">Detect automatically</option>
+						    <option value="en">English</option>
+						    <option value="es">Spanish</option>
+						    <option value="fr">French</option>
+							<option value="it">Italian</option>
+						    <option value="pt">Portugese</option>
+						    <option value="ca">Catalan</option>
+						    <option value="da">Danish</option>
+							<option value="sv">Swedish</option>
+						    <option value="no">Norwegian</option>
+						    <option value="fi">Finnish</option>
+						</select>
+					</p>
+					<input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return handleSubmit(event)">
                 </form>
             </section>
 
             <section>
-                <strong>Form Results:</strong>
+                <h2>Form Results:</h2>
+				<div id="result-mes">No results to be shown. Paste an article or other text in the form above and then hit "submit"</div>
                 <div id="results">
 				<table width="200" border="1">
-	<tbody>
-		<tr>
-			<td>score:</td>
-			<td id="score-result"> </td>
-		</tr>
-		<tr>
-			<td>agreement:</td>
-			<td id="agreement-result"> </td>
-		</tr>
-		<tr>
-			<td>subjectivity:</td>
-			<td id="subjectivity-result"> </td>
-		</tr>
-		<tr>
-			<td>confidence:</td>
-			<td id="confidence-result"> </td>
-		</tr>
-		<tr>
-			<td>irony:</td>
-			<td id="irony-result"> </td>
-		</tr>
-	</tbody>
-</table>
-</div>
-            </section>
-        </main>
+					<tbody>
+						<tr>
+							<td>score:</td>
+							<td id="score-result"> </td>
+						</tr>
+						<tr>
+							<td>agreement:</td>
+							<td id="agreement-result"> </td>
+						</tr>
+						<tr>
+							<td>subjectivity:</td>
+							<td id="subjectivity-result"> </td>
+						</tr>
+						<tr>
+							<td>confidence:</td>
+							<td id="confidence-result"> </td>
+						</tr>
+						<tr>
+							<td>irony:</td>
+							<td id="irony-result"> </td>
+						</tr>
+					</tbody>
+				</table>
+				<h3>Explanation as provided by Meaning Cloud</h3>
+				<p><strong>Score:</strong> This indicates the polarity found (or not found) in the element it refers to. The possible values are the following:
+					<ul>
+						<li>P+: strong positive</li>
+						<li>P: positive</li>
+						<li>NEU: neutral</li>
+						<li>N: negative</li>
+						<li>N+: strong negative</li>
+						<li>NONE: without sentiment</li>
+					</ul>
+				</p>
+				<p><strong>Agreement:</strong>This field marks the agreement between the sentiments detected in the text, the sentence or the segment it refers to. It has two possible values:
+					<ul>
+						<li>AGREEMENT: the different elements have the same polarity.</li>
+						<li>DISAGREEMENT: there is disagreement between the different elements' polarity.</li>
+					</ul>
+				</p>
+				<p><strong>Subjectivity:</strong> This field marks the subjectivity of the text. It has two possible values:
+					<ul>
+						<li>OBJECTIVE: the text does not have any subjectivity marks.</li>
+						<li>SUBJECTIVE: the text has subjective marks.</li>
+					</ul>
+				</p>
+				<p><strong>Confidence: </strong>This field represents the confidence associated with the sentiment analysis performed on the text. Its value is an integer number in the 0-100 range.</p>
+				<p><strong>Irony: </strong>This field indicates the irony of the text. It has two possible values:
+					<ul>
+						<li>NONIRONIC: the text does not have ironic marks</li>
+						<li>IRONIC: the text has ironic marks</li>
+					</ul>
+				</p>
+			</div>
+    	</section>
+	</main>
 
         <footer>
             <p>This is a footer</p>
