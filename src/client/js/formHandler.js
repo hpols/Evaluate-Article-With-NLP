@@ -14,7 +14,13 @@ function handleSubmit(event) {
 		input: formText
 	})
 	.then(function (res) {
-		document.getElementById('results').innerHTML = res.message
+		document.getElementById('score-result').textContent = res.score_tag;
+		document.getElementById('agreement-result').textContent= res.agreement;
+		document.getElementById('subjectivity-result').textContent = res.subjectivity;
+		document.getElementById('confidence-result').textContent = res.confidence;
+		document.getElementById('irony-result').textContent = res.irony;
+		
+		document.getElementById(results).style.display = inherit;
 	})
 }
 

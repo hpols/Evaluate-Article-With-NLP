@@ -1,4 +1,5 @@
 node_modules/
+dist/
 *.xml
 *.DS_Store
 .env
