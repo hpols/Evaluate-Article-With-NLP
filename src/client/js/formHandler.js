@@ -36,11 +36,11 @@ const postText = async (url =' ', data = {} ) => {
 		},
 		body: JSON.stringify(data)
 	});
-	try { 
-		const inputData = await response.json();
-		return inputData;
-	} catch (error) {
-		console.log('error', error);
-	}
+		try { 
+			const inputData = await response.json();
+			return inputData;
+		} catch (error) {
+			console.log('error', error);
+		}
 }
 export { handleSubmit }
