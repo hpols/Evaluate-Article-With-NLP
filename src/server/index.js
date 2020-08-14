@@ -14,9 +14,9 @@ const app = express()
 /*adding*/
 app.use(cors())
 app.use(bodyPaser.json()) //for json
-app.use(bodyPaser.urlencoded()) { // for url-encoded values
+app.use(bodyPaser.urlencoded( { // for url-encoded values
 	extended: true
-}
+}))
 
 app.use(express.static('dist'))
 
