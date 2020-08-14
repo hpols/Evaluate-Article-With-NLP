@@ -1,4 +1,4 @@
 node_modules/
 *.xml
-.DS_Store
+*.DS_Store
 .env
