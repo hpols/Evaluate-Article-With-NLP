@@ -8,22 +8,23 @@ function handleSubmit(event) {
     event.preventDefault()
 
     // get input from form field
-    let formText = document.getElementById('name').value
-	let langSelect = document.getElementById('lang-select').value
+    let formText = document.getElementById('name').value;
+	let langSelect = document.getElementById('lang-select').value;
 	//send input to server for handling and retrieve result
-	postText('http://localhost:8080/meaning', {
+	postText('http://localhost:8081/meaning', {
 		input: formText,
 		lang: langSelect
 	})
 	.then(function (res) {
+		console.log(res);
 		document.getElementById('score-result').textContent = res.score_tag;
 		document.getElementById('agreement-result').textContent= res.agreement;
 		document.getElementById('subjectivity-result').textContent = res.subjectivity;
 		document.getElementById('confidence-result').textContent = res.confidence;
 		document.getElementById('irony-result').textContent = res.irony;
 		
-		document.getElementById('results').style.display = inherit;
-		document.getElementById('results-mes').style.display = none;
+		document.getElementById('results').style.display = 'inherit';
+		document.getElementById('results-mes').style.display = 'none';
 	})
 }
 
