@@ -1,19 +1,22 @@
 // Import the js file to test
-import { postText, handleSubmit } from "../src/client/js/formHandler.js"
+import { postText, handleSubmit } from "../formHandler.js"
+import "babel-polyfill"
+
+const fetch = require('node-fetch');
 
 // A test suite may contain one or more related tests    
 describe("Testing the submit functionality", () => {
     // The test() function has two arguments - a string description, and an actual test as a callback function.  
     test("Testing the handleSubmit() function", done => {
            // Define the input for the function, if any, in the form of variables/array
-		input = {
+		let data = {
 			input: 'I like ice cream',
 			lang: 'en'
 			
 		}
 		// Define the expected output, if any, in the form of variables/array
            
-		output = {
+		let output = {
 			score_tag: 'P',
 			agreement: 'AGREEMENT',
 			subjectivity: 'SUBJECTIVE',
@@ -23,7 +26,7 @@ describe("Testing the submit functionality", () => {
 		
 		function callback(data) {
 			try {
-				expect('http://localhost:8081/meaning', input).toBe(output)
+				expect('http://localhost:8081/meaning', data).toBe(output)
 				console.log('test-try called')
 				done();
 			} catch (error) {
