@@ -24,7 +24,10 @@ module.exports = {
                 use: [ 'style-loader', 'css-loader', 'sass-loader' ]
             }
         ]
-    },
+    },devServer: {
+        host: "localhost",
+        port: "8081"
+      },
     plugins: [
         new HtmlWebPackPlugin({
             template: "./src/client/views/index.html",

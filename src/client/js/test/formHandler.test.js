@@ -1,8 +1,5 @@
 // Import the js file to test
 import { postText, handleSubmit } from "../formHandler.js"
-//import "babel-polyfill"
-
-//const fetch = require('node-fetch');
 
 // A test suite may contain one or more related tests    
 describe("Testing the submit functionality", () => {
@@ -25,7 +22,6 @@ describe("Testing the submit functionality", () => {
 		
 	    // The expect() function, in combination with a Jest matcher, is used to check if the function produces the expected output
 	    // The general syntax is `expect(myFunction(arg1, arg2, ...)).toEqual(expectedValue);`, where `toEqual()` is a matcher
-        expect(await postText('http://localhost:8080/meaning', data)).toEqual(output);
-		
+        expect(postText('http://localhost:8081/meaning',data)).resolves.toEqual(output)	
 	})
 });
