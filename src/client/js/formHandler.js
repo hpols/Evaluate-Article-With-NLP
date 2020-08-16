@@ -15,7 +15,7 @@ function handleSubmit(event) {
 	
 		let langSelect = document.getElementById('lang-select').value;
 		//send input to server for handling and retrieve result
-		postText('http://localhost:8081/meaning', {
+		postText('http://localhost:8080/meaning', {
 			input: formText,
 			lang: langSelect
 		})

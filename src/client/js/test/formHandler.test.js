@@ -24,17 +24,19 @@ describe("Testing the submit functionality", () => {
 			irony: 'NONIRONIC'
 		}
 		
-		function callback(data) {
-			try {
-				expect('http://localhost:8081/meaning', data).toBe(output)
-				console.log('test-try called')
-				done();
-			} catch (error) {
-				console.log('test-error', error)
-			  done(error);
-			}
-		}
-		postText(callback);
+//		function callback(data) {
+//			try {
+//				expect('http://localhost:8081/meaning', data).toBe(output)
+//				console.log('test-try called')
+//				done();
+//			} catch (error) {
+//				console.log('test-error', error)
+//			  done(error);
+//			}
+//		}
+//		postText(callback);
+		
+		expect(postText('http://localhost:8080/meaning',data)).resolves.toEqual(output)
            // The expect() function, in combination with a Jest matcher, is used to check if the function produces the expected output
            // The general syntax is `expect(myFunction(arg1, arg2, ...)).toEqual(expectedValue);`, where `toEqual()` is a matcher
            //expect(handleSubmit).toBeDefined();
